@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('attributes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable()->index();
             $table->string('name')->nullable();
             $table->integer('sort_order')->nullable();
             $table->tinyInteger('status')->nullable()->comment('2 = Inactive, 1 = Active');
             $table->timestamps();
         });
     }
-
-    // string, text, integer, float, boolean,tinyInteger, unsignedBigInteger
 
     /**
      * Reverse the migrations.
