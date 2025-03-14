@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,17 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/contact',[ContactController::class, "index"])->name('contact.index');
+
+
+
+
+
+Route::resource('attribute',AttributeController::class);
+
+
+
+
+
 
 Route::get('/home', function(){
    return view('admin.modules.home.index');
